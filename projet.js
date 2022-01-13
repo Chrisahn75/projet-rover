@@ -56,43 +56,51 @@ function turnRight (rover){
     };
 };
 
-console.log (turnLeft(rover));
-console.log(turnRight(rover));
-
-// function moveForward (rover){
+function moveForward (rover){
    
-//     switch (rover.direction) {
-//         case "N" : 
-//             if (rover.y === 0) {
-//                 return console.log ("You can't move forward");
-//               } 
-//             //   else {rover.y = rover.y--}
-//             break;
-//         case  "E" :
-//             if (rover.x === grid.length-1){ // on va tester avec grid[0].length -1
-//                 console.log ("You can't move forward");            
-//             } 
-//             // else {rover.x = rover.x++};
-//             break;             
-//         case "S" : 
-//             if (rover.y === grid.length-1){ // grid[0]
-//                 console.log ("You can't move forward")
-//             } 
-//             //else {rover.y = rover.y--}
-//             break;
-//         case "W" : 
-//         if (rover.x === 0){
-//             console.log ("You can't move forward");
-//         }
-//         // else {rover.x = rover.x--}
-//         break;
-//     };       
+    switch (rover.direction) {
+        case "N" : 
+            if (rover.y === 0) {
+                return console.log ("You can't move forward");
+              } 
+              else {
+                    console.log("You can move forward");
+                    console.log(`Your current direction is ${rover.direction}`);
+                    rover.y = rover.y--}
+            break;
+        case  "E" :
+            if (rover.x === grid.length-1){ // on va tester avec grid[0].length -1
+                console.log ("You can't move forward");            
+            } 
+            else {
+                    console.log("You can move forward");
+                    console.log(`Your current direction is ${rover.direction}`);          
+                    rover.x = rover.x++};
+            break;             
+        case "S" : 
+            if (rover.y === grid.length-1){ // grid[0]
+                console.log ("You can't move forward")
+            } 
+            else {
+                console.log("You can move forward");
+                console.log(`Your current direction is ${rover.direction}`);
+                rover.y = rover.y--}
+            break;
+        case "W" : 
+        if (rover.x === 0){            
+            console.log ("You can't move forward");
+        }
+        else {
+            console.log("You can move forward");
+            console.log(`Your current direction is ${rover.direction}`);
+            rover.x = rover.x--}
+        break;
+    };       
 
-// };
-
-// console.log (moveForward (rover));
+};
 
 // Autre façon
+
 // function moveForward(rover) {
 //     if ((rover.direction === "N" && rover.y <= 0) ||
 
@@ -119,3 +127,7 @@ console.log(turnRight(rover));
 //     console.log(`* Current rover direction is ${rover.direction} *`);
 // };
 
+turnRight(rover);
+turnRight(rover);
+moveForward(rover);
+console.table(grid)
