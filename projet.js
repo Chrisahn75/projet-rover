@@ -176,3 +176,17 @@ pilotRover("r");
 pilotRover("r");
 pilotRover("f");
 console.table(grid);
+
+// PROMPT
+
+const prompt = require("prompt");
+
+const properties = [
+    {
+        name: "move",
+        description: "What's rover's next move ?",
+        type: "string",
+        validator: /^[lfrb]+$/,
+        warning: "Invalid output, only use 'l' for left, 'r' for right, 'f' for forward and 'b' for backward"
+    }
+];

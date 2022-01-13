@@ -1,0 +1,23 @@
+{
+  "name": "projet-rover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "projet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesselessa/projet-rover.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesselessa/projet-rover/issues"
+  },
+  "homepage": "https://github.com/jesselessa/projet-rover#readme",
+  "dependencies": {
+    "prompt": "^1.2.1"
+  }
+}
