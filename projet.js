@@ -14,15 +14,13 @@ const grid = [
 ];
 
 
-let rover= {
+const rover= {
     direction: "N",
     x: 0,
     y: 0,
 }
 
-grid [0][0] ="N"
-
-console.table(grid)
+// console.table(grid)
 
 function turnLeft (rover){
     switch (rover.direction) {
@@ -40,8 +38,7 @@ function turnLeft (rover){
         break;        
     } 
 }
-
-turnLeft("N")
+turnLeft("S")
 
 function turnRight (rover){
     switch (rover.direction) {
@@ -60,7 +57,7 @@ function turnRight (rover){
     } 
 }
 
-turnRight ("N")
+turnRight ()
 
 function moveForward (rover){
    
