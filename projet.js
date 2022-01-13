@@ -68,6 +68,8 @@ function turnRight (rover){
 // FUNCTION MOVEFORWARD
 
 function moveForward (rover){
+    grid[rover.y][rover.x] = " ";
+
    
     switch (rover.direction) {
         case "N" : 
@@ -115,6 +117,9 @@ function moveForward (rover){
 // FUNCTION MOVEBACKWARD
 
 function moveBackward (rover){
+
+grid[rover.y][rover.x] = " ";
+
 switch (rover.direction) {
     case "N" :
         if (rover.y === grid.length-1) {
@@ -192,38 +197,35 @@ grid[rover.y][rover.x]=rover.direction;
 // FUNCTION PILOTROVER + TRAVELLOG
 
 function pilotRover(str){
-    for (let i = 0; i < str.length; i++) {
-        switch (str[i]){
-            case "l":
-                turnLeft(rover);
-                rover.travelLog.push("You have turned left")
-                // console.log("You have turned left");
-                break;
-            case "r":
-                turnRight(rover);
-                rover.travelLog.push("You have turned right")
-                // console.log("You have turned right");
-                break;
-            case "f":
-                moveForward(rover);
-                rover.travelLog.push("You have moved forward")
-                // console.log("You have moved forward");
-                break;
-            case "b":
-                moveBackward(rover);
-                rover.travelLog.push("You have moved backward")
-                // console.log("You have moved forward");
-                break;
-            default :
-                console.log("You cannot execute that command");
-        }
+    switch (str){
+        case "l":
+            turnLeft(rover);
+            rover.travelLog.push("You have turned left")
+            // console.log("You have turned left");
+            break;
+        case "r":
+            turnRight(rover);
+            rover.travelLog.push("You have turned right")
+            // console.log("You have turned right");
+            break;
+        case "f":
+            moveForward(rover);
+            rover.travelLog.push("You have moved forward")
+            // console.log("You have moved forward");
+            break;
+        case "b":
+            moveBackward(rover);
+            rover.travelLog.push("You have moved backward")
+            // console.log("You have moved forward");
+            break;
+        default :
+            console.log("You cannot execute that command");
     }
-    rover.x = 6;
-    rover.y = 4;   
-    grid[rover.y][rover.x] = rover.direction;
-    console.log(`Your Rover's history is: ${rover.travelLog}`);
-    console.log(`Your current position is ${rover.y}/${rover.x} and your current direction is ${rover.direction}`);  
-    
+
+grid[rover.y][rover.x] = rover.direction;
+console.log(`Your Rover's history is: ${rover.travelLog}`);
+console.log(`Your current position is ${rover.y}/${rover.x} and your current direction is ${rover.direction}`);  
+
 };
 
 pilotRover("r");
