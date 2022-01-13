@@ -76,7 +76,7 @@ function moveForward (rover){
               } 
               else {
                     console.log("You can move forward");
-                    console.log(`Your current direction is ${rover.direction}`);
+                    // console.log(`Your current direction is ${rover.direction}`);
                     rover.y = rover.y--}
             break;
         case  "E" :
@@ -85,7 +85,7 @@ function moveForward (rover){
             } 
             else {
                     console.log("You can move forward");
-                    console.log(`Your current direction is ${rover.direction}`);          
+                    // console.log(`Your current direction is ${rover.direction}`);          
                     rover.x = rover.x++};
             break;             
         case "S" : 
@@ -94,7 +94,7 @@ function moveForward (rover){
             } 
             else {
                 console.log("You can move forward");
-                console.log(`Your current direction is ${rover.direction}`);
+                // console.log(`Your current direction is ${rover.direction}`);
                 rover.y = rover.y--}
             break;
         case "W" : 
@@ -103,7 +103,7 @@ function moveForward (rover){
         }
         else {
             console.log("You can move forward");
-            console.log(`Your current direction is ${rover.direction}`);
+            // console.log(`Your current direction is ${rover.direction}`);
             rover.x = rover.x--}
         break;
     };
@@ -122,7 +122,7 @@ switch (rover.direction) {
             }
             else {
                 console.log("You can move backward");
-                console.log(`Your current direction is ${rover.direction}`);
+                // console.log(`Your current direction is ${rover.direction}`);
                 rover.y = rover.y++}
         break;
     case  "E" :
@@ -131,7 +131,7 @@ switch (rover.direction) {
         }
         else {
                 console.log("You can move backrward");
-                console.log(`Your current direction is ${rover.direction}`);
+                // console.log(`Your current direction is ${rover.direction}`);
                 rover.x = rover.x--};
         break;
     case "S" :
@@ -140,7 +140,7 @@ switch (rover.direction) {
         }
         else {
             console.log("You can move backward");
-            console.log(`Your current direction is ${rover.direction}`);
+            // console.log(`Your current direction is ${rover.direction}`);
             rover.y = rover.y++}
         break;
     case "W" :
@@ -149,7 +149,7 @@ switch (rover.direction) {
     }
     else {
         console.log("You can move backward");
-        console.log(`Your current direction is ${rover.direction}`);
+        // console.log(`Your current direction is ${rover.direction}`);
         rover.x = rover.x++}
     break;
 };
@@ -209,12 +209,20 @@ function pilotRover(str){
                 rover.travelLog.push("You have moved forward")
                 // console.log("You have moved forward");
                 break;
+            case "b":
+                moveBackward(rover);
+                rover.travelLog.push("You have moved backward")
+                // console.log("You have moved forward");
+                break;
             default :
                 console.log("You cannot execute that command");
         }
     }
-    console.log(`Your Rover's history is: ${rover.travelLog}`);
+   
     grid[rover.y][rover.x] = rover.direction;
+    console.log(`Your Rover's history is: ${rover.travelLog}`);
+    console.log(`Your current position is ${rover.y}/${rover.x} and your current direction is ${rover.direction}`);  
+    
 };
 
 pilotRover("r");
@@ -224,14 +232,14 @@ console.table(grid);
 
 // PROMPT
 
-const prompt = require("prompt");
+// const prompt = require("prompt");
 
-const properties = [
-    {
-        name: "move",
-        description: "What's rover's next move ?",
-        type: "string",
-        validator: /^[lfrb]+$/,
-        warning: "Invalid output, only use 'l' for left, 'r' for right, 'f' for forward and 'b' for backward"
-    }
-];
+// const properties = [
+//     {
+//         name: "move",
+//         description: "What's rover's next move ?",
+//         type: "string",
+//         validator: /^[lfrb]+$/,
+//         warning: "Invalid output, only use 'l' for left, 'r' for right, 'f' for forward and 'b' for backward"
+//     }
+// ];
