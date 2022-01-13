@@ -112,6 +112,50 @@ function moveForward (rover){
 
 };
 
+// FUNCTION MOVEBACKWARD
+
+function moveBackward (rover){
+switch (rover.direction) {
+    case "N" :
+        if (rover.y === grid.length-1) {
+            return console.log ("You can't move backward");
+            }
+            else {
+                console.log("You can move backward");
+                console.log(`Your current direction is ${rover.direction}`);
+                rover.y = rover.y++}
+        break;
+    case  "E" :
+        if (rover.x === 0){ // on va tester avec grid[0].length -1
+            console.log ("You can't move backward");
+        }
+        else {
+                console.log("You can move backrward");
+                console.log(`Your current direction is ${rover.direction}`);
+                rover.x = rover.x--};
+        break;
+    case "S" :
+        if (rover.y === 0){ // grid[0]
+            console.log ("You can't move backward")
+        }
+        else {
+            console.log("You can move backward");
+            console.log(`Your current direction is ${rover.direction}`);
+            rover.y = rover.y++}
+        break;
+    case "W" :
+    if (rover.x === grid.length-1){
+        console.log ("You can't move backward");
+    }
+    else {
+        console.log("You can move backward");
+        console.log(`Your current direction is ${rover.direction}`);
+        rover.x = rover.x++}
+    break;
+};
+grid[rover.y][rover.x]=rover.direction;
+};
+
 // Autre façon
 
 // function moveForward(rover) {
@@ -143,6 +187,7 @@ function moveForward (rover){
 // turnRight(rover);
 // turnRight(rover);
 // moveForward(rover);
+
 
 // FUNCTION PILOTROVER + TRAVELLOG
 
