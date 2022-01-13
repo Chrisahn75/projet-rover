@@ -218,7 +218,8 @@ function pilotRover(str){
                 console.log("You cannot execute that command");
         }
     }
-   
+    rover.x = 6;
+    rover.y = 4;   
     grid[rover.y][rover.x] = rover.direction;
     console.log(`Your Rover's history is: ${rover.travelLog}`);
     console.log(`Your current position is ${rover.y}/${rover.x} and your current direction is ${rover.direction}`);  
