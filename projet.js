@@ -22,6 +22,8 @@ const rover= {
 
 // console.table(grid)
 
+// FUNCTION TURNLEFT
+
 function turnLeft (rover){
     switch (rover.direction) {
         case "N" : 
@@ -37,7 +39,11 @@ function turnLeft (rover){
         rover.direction = "N";
         break;        
     }; 
+
+    grid[rover.y][rover.x] = rover.direction;
 };
+
+// FUNCTION TURNRIGHT
 
 function turnRight (rover){
     switch (rover.direction) {
@@ -54,7 +60,11 @@ function turnRight (rover){
             rover.direction ="N";
             break;        
     };
+
+    grid[rover.y][rover.x] = rover.direction;
 };
+
+// FUNCTION MOVEFORWARD
 
 function moveForward (rover){
    
@@ -95,7 +105,9 @@ function moveForward (rover){
             console.log(`Your current direction is ${rover.direction}`);
             rover.x = rover.x--}
         break;
-    };       
+    };
+    
+    grid[rover.y][rover.x] = rover.direction;
 
 };
 
@@ -127,7 +139,37 @@ function moveForward (rover){
 //     console.log(`* Current rover direction is ${rover.direction} *`);
 // };
 
-turnRight(rover);
-turnRight(rover);
-moveForward(rover);
-console.table(grid)
+// turnRight(rover);
+// turnRight(rover);
+// moveForward(rover);
+
+// FUNCTION PILOTROVER
+
+function pilotRover(str){
+    for (let i = 0; i < str.length; i++) {
+        console.log(str);
+        switch (str[i]){
+        // switch (str.charAt(i)){
+            case "l":
+                turnLeft(rover);
+                console.log("You have turned left");
+                break;
+            case "r":
+                turnRight(rover);
+                console.log("You have turned right");
+                break;
+            case "f":
+                moveForward(rover);
+                console.log("You have moved forward");
+                break;
+            default :
+                console.log("You cannot execute that command");
+        };
+    };
+};
+
+pilotRover("r");
+pilotRover("r");
+pilotRover("f");
+pilotRover("w");
+console.table(grid);
