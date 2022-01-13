@@ -18,6 +18,7 @@ const rover= {
     direction: "N",
     x: 0,
     y: 0,
+    travelLog: [],
 }
 
 // console.table(grid)
@@ -143,33 +144,35 @@ function moveForward (rover){
 // turnRight(rover);
 // moveForward(rover);
 
-// FUNCTION PILOTROVER
+// FUNCTION PILOTROVER + TRAVELLOG
 
 function pilotRover(str){
     for (let i = 0; i < str.length; i++) {
-        console.log(str);
         switch (str[i]){
-        // switch (str.charAt(i)){
             case "l":
                 turnLeft(rover);
-                console.log("You have turned left");
+                rover.travelLog.push("You have turned left")
+                // console.log("You have turned left");
                 break;
             case "r":
                 turnRight(rover);
-                console.log("You have turned right");
+                rover.travelLog.push("You have turned right")
+                // console.log("You have turned right");
                 break;
             case "f":
                 moveForward(rover);
-                console.log("You have moved forward");
+                rover.travelLog.push("You have moved forward")
+                // console.log("You have moved forward");
                 break;
             default :
                 console.log("You cannot execute that command");
-        };
-    };
+        }
+    }
+    console.log(`Your Rover's history is: ${rover.travelLog}`);
+    grid[rover.y][rover.x] = rover.direction;
 };
 
 pilotRover("r");
 pilotRover("r");
 pilotRover("f");
-pilotRover("w");
 console.table(grid);
